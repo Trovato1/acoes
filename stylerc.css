@@ -1,0 +1,117 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    background-image: url('https://example.com/red-pattern.png');
+    background-attachment: fixed;
+}
+
+h1 {
+    color: #9a0000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 2.3rem;
+    margin: 40px 0 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #d40000;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #9a0000, transparent);
+    margin: 15px auto 0;
+}
+
+ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+ol li {
+    counter-increment: item;
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 20px 20px 20px 70px;
+    border-left: 5px solid #d40000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 0 5px 5px 0;
+}
+
+ol li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+ol li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #9a0000;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid #700000;
+}
+
+
+li strong {
+    color: #9a0000;
+    font-weight: 700;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+    
+    ol li {
+        padding: 15px 15px 15px 60px;
+        font-size: 0.95rem;
+    }
+    
+    ol li::before {
+        width: 45px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    ol li {
+        padding: 12px 12px 12px 50px;
+    }
+    
+    ol li::before {
+        width: 40px;
+        font-size: 1.1rem;
+    }
+}
